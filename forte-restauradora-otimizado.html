@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forte Restauradora – Recuperação Veicular e Reforma de Caminhões</title>
+    <meta name="description" content="A Forte Restauradora é especialista em recuperação veicular e reforma de caminhões. Pintura, alinhamento de chassi e restauro completo em São Marcos/RS.">
+    <meta name="keywords" content="recuperação veicular, restauradora de caminhões, Forte Restauradora, reforma de caminhões, pintura de caminhão, São Marcos RS">
+    <meta name="theme-color" content="#000000">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Forte Restauradora – Recuperação Veicular e Reforma de Caminhões">
+    <meta property="og:description" content="Especialistas em recuperação veicular e restauro de caminhões com mais de 15 anos de experiência.">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/gps-cs-s/APNQkAEuy73IhhdV_ng57MIyfIaMo6f7OKSoDwKNNsxq23QQJzleC7_hix87wR_RvkvwnRethIMwgpsXpOxosd3-jRHwRMzn_DujO6vZA0PUn4JwDZnehrUt755rXWRcdbueybx0Qj7N=s680-w680-h510-rw">
+    <meta property="og:url" content="https://forterestauradora.com.br">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://cdn.dooca.store/160409/files/copia-de-forte-restauradora-modelo-kit-marca-1.png?v=1726685810">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --industrial-blue: #000000;
+            --electric-blue: #1a1a1a;
+            --silver: #f5f5f5;
+            --white: #FFFFFF;
+            --light-grey: #e8e8e8;
+            --dark-blue: #1a1a1a;
+            --warm-orange: #FFA500;
+            --success-green: #25D366;
+            --grid-color: rgba(0,0,0,0.05);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--white);
+            color: var(--dark-blue);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding: 0 2rem;
+            }
+        }
+
+        /* HEADER */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: var(--white);
+            border-bottom: 1px solid var(--light-grey);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo img {
+            height: 70px;
+            width: auto;
+        }
+
+        .menu {
+            display: none;
+            gap: 2rem;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: var(--dark-blue);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .menu a:hover {
+            color: var(--industrial-blue);
+        }
+
+        @media (min-width: 768px) {
+            .menu {
+                display: flex;
+            }
+        }
+
+        .btn {
+            background: var(--industrial-blue);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background: var(--dark-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 51, 102, 0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--industrial-blue);
+            color: var(--industrial-blue);
+        }
+
+        .btn-outline:hover {
+            background: var(--light-grey);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--industrial-blue);
+        }
+
+        @media (max-width: 767px) {
+            .menu-toggle {
+                display: block;
+            }
+            .menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 1rem;
+                gap: 0.5rem;
+                border-bottom: 1px solid var(--light-grey);
+            }
+            .menu.active {
+                display: flex;
+            }
+        }
+
+        /* HERO */
+        .hero {
+            padding: 4rem 0;
+            background: var(--white);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1.1fr 1fr;
+                gap: 4rem;
+            }
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        @media (min-width: 768px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+        }
+
+        .hero-location {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--industrial-blue);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--light-grey);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--industrial-blue);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .hero-buttons {
+                flex-direction: row;
+            }
+        }
+
+        .hero-image {
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 1px solid var(--light-grey);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            background: var(--light-grey);
+        }
+
+        /* PORTFOLIO */
+        .portfolio {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (min-width: 768px) {
+            .section-header h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        .section-header p {
+            font-size: 1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .brands-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .brand-card {
+            background: var(--white);
+            border: 2px solid var(--light-grey);
+            border-radius: 0.5rem;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 180px;
+        }
+
+        .brand-card:hover {
+            border-color: var(--industrial-blue);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transform: translateY(-4px);
+        }
+
+        .brand-card img {
+            height: 120px;
+            width: auto;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+
+        .brand-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            animation: fadeIn 0.3s ease;
+            overflow-y: auto;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 2rem 1rem;
+        }
+
+        .modal-content {
+            background: var(--white);
+            border-radius: 0.5rem;
+            max-width: 95%;
+            width: 100%;
+            padding: 2rem;
+            position: relative;
+            animation: slideInUp 0.3s ease;
+            margin-top: 2rem;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--dark-blue);
+            transition: color 0.3s;
+        }
+
+        .modal-close:hover {
+            color: var(--industrial-blue);
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .modal-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .modal-gallery {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .modal-gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .modal-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* SERVICES */
+        .services {
+            padding: 5rem 0;
+            background: var(--light-grey);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border-top: 4px solid var(--industrial-blue);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transform: translateY(-4px);
+        }
+
+        .service-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .service-card p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ABOUT */
+        .about {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+        }
+
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            background: var(--light-grey);
+            margin: 0 auto;
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+            animation: fadeIn 0.5s;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background: var(--light-grey);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .slide-indicators {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+            z-index: 10;
+        }
+
+        .indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .indicator.active {
+            background: var(--electric-blue);
+            width: 24px;
+            border-radius: 4px;
+        }
+
+        .about-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .about-stat {
+            border-left: 4px solid var(--industrial-blue);
+            padding-left: 1rem;
+        }
+
+        .about-stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--industrial-blue);
+        }
+
+        .about-stat-label {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        /* CONTACT */
+        .contact {
+            padding: 5rem 0;
+            background: var(--light-grey);
+        }
+
+        .map-container {
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            margin: 2rem auto;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 1px solid var(--white);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 2rem auto;
+        }
+
+        @media (min-width: 768px) {
+            .contact-info {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            text-align: center;
+        }
+
+        .contact-card h3 {
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .contact-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .contact-card a {
+            color: var(--industrial-blue);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-card a:hover {
+            color: var(--dark-blue);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+            border-top: 1px solid #333;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1.5fr 1fr 1fr;
+            }
+        }
+
+        .footer-col h4 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--electric-blue);
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-col p, .footer-col li {
+            color: #ccc;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: var(--electric-blue);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            font-size: 0.8rem;
+            color: #888;
+            margin: 0;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--electric-blue);
+        }
+
+        /* FLOATING WHATSAPP */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 40;
+            width: 70px;
+            height: 70px;
+            background: var(--success-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            }
+            50% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.6);
+            }
+        }
+
+        .floating-whatsapp:hover {
+            background: #1fa856;
+            transform: scale(1.15);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+            animation: none;
+        }
+
+        .floating-whatsapp svg {
+            width: 40px;
+            height: 40px;
+            fill: var(--white);
+        }
+
+        /* ANIMATIONS */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 767px) {
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <img src="https://cdn.dooca.store/160409/files/copia-de-forte-restauradora-modelo-kit-marca-1.png?v=1726685810" alt="Forte Restauradora" loading="eager">
+                </a>
+                <div class="menu" id="menu">
+                    <a href="#inicio">Início</a>
+                    <a href="#portfolio">Portfólio</a>
+                    <a href="#servicos">Serviços</a>
+                    <a href="#sobre">Sobre</a>
+                    <a href="#contato">Contato</a>
+                </div>
+                <a href="https://api.whatsapp.com/send?l=pt_br&phone=555432914196" target="_blank" class="btn" style="display: none;" id="header-cta">Solicitar Orçamento</a>
+                <button class="menu-toggle" id="menu-toggle">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content animate-in">
+                    <p class="hero-location">São Marcos / RS</p>
+                    <h1>Recuperação Veicular e Reforma de Caminhões</h1>
+                    <p class="hero-description">Especialistas em pintura, recuperação de estrutura e restauro completo de veículos pesados. Qualidade e tradição na Forte Restauradora.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value">+500</div>
+                            <div class="stat-label">Caminhões Recuperados</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">+15</div>
+                            <div class="stat-label">Anos de Experiência</div>
+                        </div>
+                    </div>
+
+                    <div class="hero-buttons">
+                        <a href="#portfolio" class="btn">Ver Portfólio</a>
+                        <a href="https://api.whatsapp.com/send?l=pt_br&phone=555432914196" target="_blank" class="btn btn-outline">Fale Conosco</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAEuy73IhhdV_ng57MIyfIaMo6f7OKSoDwKNNsxq23QQJzleC7_hix87wR_RvkvwnRethIMwgpsXpOxosd3-jRHwRMzn_DujO6vZA0PUn4JwDZnehrUt755rXWRcdbueybx0Qj7N=s680-w680-h510-rw" alt="Recuperação Veicular e Reforma de Caminhões" loading="eager">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header animate-in">
+                <h2>Restaurações Feitas</h2>
+                <p>Clique em cada marca para ver as restaurações realizadas.</p>
+            </div>
+
+            <div class="brands-grid">
+                <div class="brand-card" onclick="openModal('scania')">
+                    <img src="https://cdn.dooca.store/160409/files/1-13.png?v=1727287628" alt="Scania" loading="lazy">
+                    <h3>Scania</h3>
+                </div>
+                <div class="brand-card" onclick="openModal('volvo')">
+                    <img src="https://cdn.dooca.store/160409/files/2-9.png?v=1727287645" alt="Volvo" loading="lazy">
+                    <h3>Volvo</h3>
+                </div>
+                <div class="brand-card" onclick="openModal('mercedes')">
+                    <img src="https://cdn.dooca.store/160409/files/4-4.png?v=1727287670" alt="Mercedes-Benz" loading="lazy">
+                    <h3>Mercedes-Benz</h3>
+                </div>
+                <div class="brand-card" onclick="openModal('vw')">
+                    <img src="https://cdn.dooca.store/160409/files/5-3.png?v=1727287684" alt="Volkswagen" loading="lazy">
+                    <h3>Volkswagen</h3>
+                </div>
+                <div class="brand-card" onclick="openModal('daf')">
+                    <img src="https://cdn.dooca.store/160409/files/6-9.png?v=1727287698" alt="DAF" loading="lazy">
+                    <h3>DAF</h3>
+                </div>
+                <div class="brand-card" onclick="openModal('iveco')">
+                    <img src="https://cdn.dooca.store/160409/files/3-9.png?v=1727287657" alt="Iveco" loading="lazy">
+                    <h3>Iveco</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODALS -->
+    <div id="modal-scania" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('scania')">✕</button>
+            <h2 class="modal-title">Scania</h2>
+            <div class="modal-gallery">
+                <img src="https://cdn.dooca.store/160409/files/21.png?v=1727110389" alt="Scania 1" loading="lazy">
+                <img src="https://cdn.dooca.store/160409/files/26.png?v=1727111000" alt="Scania 2" loading="lazy">
+                <img src="https://cdn.dooca.store/160409/files/23.png?v=1727111021" alt="Scania 3" loading="lazy">
+                <img src="https://cdn.dooca.store/160409/files/25.png?v=1727111125" alt="Scania 4" loading="lazy">
+                <img src="https://cdn.dooca.store/160409/files/scania-65-anos-forte-restauradora-1.png?v=1727381033" alt="Scania 5" loading="lazy">
+                <img src="https://cdn.dooca.store/160409/files/scania-65-anos-forte-restauradora.png?v=1727381081" alt="Scania 6" loading="lazy">
+                <img src="https://cdn.dooca.store/160409/files/1-15.png?v=1727379728" alt="Scania 7" loading="lazy">
+                <img src="https://cdn.dooca.store/160409/files/20.png?v=1727111595" alt="Scania 8" loading="lazy">
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-volvo" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('volvo')">✕</button>
+            <h2 class="modal-title">Volvo</h2>
+            <div class="modal-gallery">
+                <img src="https://cdn.dooca.store/160409/files/22-4.png?v=1727184887" alt="Volvo 1" loading="lazy">
+                <img src="https://cdn.dooca.store/160409/files/1-9.png?v=1727185506" alt="Volvo 2" loading="lazy">
+                <img src="https://cdn.dooca.store/160409/files/17-19.png?v=1727434247" alt="Volvo 3" loading="lazy">
+                <img src="https://cdn.dooca.store/160409/files/24-5.png?v=1727434789" alt="Volvo 4" loading="lazy">
+                <img src="https://cdn.dooca.store/160409/files/12-29.png?v=1727435020" alt="Volvo 5" loading="lazy">
+                <img src="https://cdn.dooca.store/160409/files/24-5.png?v=1727434789" alt="Volvo 6" loading="lazy">
+                <img src="https://cdn.dooca.store/160409/files/22-9.png?v=1727434753" alt="Volvo 7" loading="lazy">
+                <img src="https://cdn.dooca.store/160409/files/18-12.png?v=1727435378" alt="Volvo 8" loading="lazy">
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-mercedes" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('mercedes')">✕</button>
+            <h2 class="modal-title">Mercedes-Benz</h2>
+            <div class="modal-gallery">
+                <img src="https://cdn.dooca.store/160409/files/21-8.png?v=1727263801" alt="Mercedes 1" loading="lazy">
+                <img src="https://cdn.dooca.store/160409/files/17-12.png?v=1727263381" alt="Mercedes 2" loading="lazy">
+                <img src="https://cdn.dooca.store/160409/files/forte-restauradora-mercedes-2.png?v=1727282505" alt="Mercedes 3" loading="lazy">
+                <img src="https://cdn.dooca.store/160409/files/11-20.png?v=1727283943" alt="Mercedes 4" loading="lazy">
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-vw" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('vw')">✕</button>
+            <h2 class="modal-title">Volkswagen</h2>
+            <div class="modal-gallery">
+                <img src="https://cdn.dooca.store/160409/files/6-8.png?v=1727270594" alt="VW 1" loading="lazy">
+                <img src="https://cdn.dooca.store/160409/files/7-7.png?v=1727270615" alt="VW 2" loading="lazy">
+                <img src="https://cdn.dooca.store/160409/files/21-9.png?v=1727270768" alt="VW 3" loading="lazy">
+                <img src="https://cdn.dooca.store/160409/files/18-8.png?v=1727270710" alt="VW 4" loading="lazy">
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-daf" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('daf')">✕</button>
+            <h2 class="modal-title">DAF</h2>
+            <div class="modal-gallery">
+                <img src="https://cdn.dooca.store/160409/files/2-8.png?v=1727272330" alt="DAF 1" loading="lazy">
+                <img src="https://cdn.dooca.store/160409/files/5-7.png?v=1727272309" alt="DAF 2" loading="lazy">
+                <img src="https://cdn.dooca.store/160409/files/3-8.png?v=1727272282" alt="DAF 3" loading="lazy">
+                <img src="https://cdn.dooca.store/160409/files/1-12.png?v=1727272256" alt="DAF 4" loading="lazy">
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-iveco" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('iveco')">✕</button>
+            <h2 class="modal-title">Iveco</h2>
+            <div class="modal-gallery">
+                <img src="https://cdn.dooca.store/160409/files/10-6.png?v=1727206147" alt="Iveco 1" loading="lazy">
+                <img src="https://cdn.dooca.store/160409/files/feed-forte-iveco-stralis-placa-ino-6521-1.png?v=1727206984" alt="Iveco 2" loading="lazy">
+                <img src="https://cdn.dooca.store/160409/files/2-10.png?v=1727375685" alt="Iveco 3" loading="lazy">
+                <img src="https://cdn.dooca.store/160409/files/12-26.png?v=1727376107" alt="Iveco 4" loading="lazy">
+                <img src="https://cdn.dooca.store/160409/files/13-21.png?v=1727377217" alt="Iveco 5" loading="lazy">
+                <img src="https://cdn.dooca.store/160409/files/17-16.png?v=1727376236" alt="Iveco 6" loading="lazy">
+                <img src="https://cdn.dooca.store/160409/files/feed-forte-iveco-stralis-placa-ino-6521-2.png?v=1727206965" alt="Iveco 7" loading="lazy">
+                <img src="https://cdn.dooca.store/160409/files/12-7.png?v=1727207041" alt="Iveco 8" loading="lazy">
+            </div>
+        </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section id="servicos" class="services">
+        <div class="container">
+            <div class="section-header animate-in">
+                <h2>Nossos Serviços</h2>
+                <p>Especialistas em recuperação e restauro de caminhões na região serrana do RS.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>🎨 Pintura</h3>
+                    <p>Pintura automotiva de alta durabilidade em cabines, baús e estruturas.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🔧 Recuperação Veicular</h3>
+                    <p>Restauro completo de veículos pesados danificados, devolvendo segurança e estética.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🛠️ Reforma Completa</h3>
+                    <p>Reforma geral de cabines e carrocerias com padrão profissional.</p>
+                </div>
+                <div class="service-card">
+                    <h3>⚙️ Alinhamento de Chassi</h3>
+                    <p>Correção e alinhamento técnico para garantir segurança no transporte.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="sobre" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="slideshow-container">
+                    <div class="slide active"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGq1KaUpMXd4CuTeR0AfgZJogpWTzoF3Ijpd2WuD2sB0ZhIMHtqqLa7sjBo7dOw68le852dPcpQUDBsJb-RFmzZ7RIfi2iROiKKVldqVeEMVA8k9bDADutElZtUUkXs2CHa6Fcn=s680-w680-h510-rw" alt="Forte 1" loading="eager"></div>
+                    <div class="slide"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHLgiVXC58pMQlryr-j8d4avIi0olKO4VJdT5RFLt9w-lBcVi1v4rj_cBN9845sA-OQ2ai_EWljsGtEhe22h40EpEoAUvDf7fq8n6ELFo4tRaAOeed1uK_CtpTUCsOqYBBzom84=s680-w680-h510-rw" alt="Forte 2" loading="lazy"></div>
+                    <div class="slide"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAE0M-6aToW0CaZsCu9hl6vda9NAidx9HB1AV1ssCQWLi-lWSvsG82pkrpT6ip7m5rcniZBpuWo3pM3KwAJ6IMD2aF034giPtOA60U1Nlo5hIz_3Z9Ay2HNioj-dcZoq6-OkmKJwFg=s680-w680-h510-rw" alt="Forte 3" loading="lazy"></div>
+                    <div class="slide"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAEuy73IhhdV_ng57MIyfIaMo6f7OKSoDwKNNsxq23QQJzleC7_hix87wR_RvkvwnRethIMwgpsXpOxosd3-jRHwRMzn_DujO6vZA0PUn4JwDZnehrUt755rXWRcdbueybx0Qj7N=s680-w680-h510-rw" alt="Forte 4" loading="lazy"></div>
+                    <div class="slide"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHRjKWkzLOVNTDqGUIVfKF6jo089Vk_IZy3uNT3vCE4m1UQ-Lw_q83O3BegEKTPOFqE5445wWsw16lVLQexCwyMad_y3-mF5JwcX2MKRT-G58vxhduarqhXCSpuwhZhGEy6XoM3=s680-w680-h510-rw" alt="Forte 5" loading="lazy"></div>
+                    <div class="slide"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGX-F22ksPQfcXKIveL5CZra7ssH-5MIf8emkA1jsIB0ujKVyzL3hOriTl4v2a0p4bfFuuI1_oRTMoeIH94jOenvrSJJ9g8Y6XRBtDFbOflwIHZPTdhtleALd-l6jbBv_KYz3M=s680-w680-h510-rw" alt="Forte 6" loading="lazy"></div>
+                    <div class="slide"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHEINjYBM4vI-S5Z1e8Ke6Pfm-WVGZ2pj0b33qvxyYhZE8YJjsXtjmKn36aHK0ii3QbT4_pZJ4fTAYThHPAoKyxqeD8onGD_qOlDo7yxUX4ZUIfw9UGHuF7fHL4bZBbuLO7uZskdQ=s680-w680-h510-rw" alt="Forte 7" loading="lazy"></div>
+                    
+                    <div class="slide-indicators">
+                        <span class="indicator active" onclick="currentSlide(0)"></span>
+                        <span class="indicator" onclick="currentSlide(1)"></span>
+                        <span class="indicator" onclick="currentSlide(2)"></span>
+                        <span class="indicator" onclick="currentSlide(3)"></span>
+                        <span class="indicator" onclick="currentSlide(4)"></span>
+                        <span class="indicator" onclick="currentSlide(5)"></span>
+                        <span class="indicator" onclick="currentSlide(6)"></span>
+                    </div>
+                </div>
+
+                <div class="about-content">
+                    <h2>Tradição em Recuperação Veicular</h2>
+                    <p>Sediada em São Marcos-RS e integrante do <strong>Grupo Campagnaro desde 2017</strong>, a Forte Restauradora é especialista em recuperação e pintura de alta performance para veículos pesados.</p>
+                    <p>Com foco em durabilidade e segurança, garantimos que seu caminhão volte para a estrada com a qualidade original.</p>
+
+                    <div class="about-stats">
+                        <div class="about-stat">
+                            <div class="about-stat-value">100%</div>
+                            <div class="about-stat-label">Comprometimento</div>
+                        </div>
+                        <div class="about-stat">
+                            <div class="about-stat-value">6</div>
+                            <div class="about-stat-label">Tipos de Serviços</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contato" class="contact">
+        <div class="container">
+            <div class="section-header animate-in">
+                <h2>Nossa Localização</h2>
+                <p>São Marcos / RS</p>
+            </div>
+
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3491.657964029455!2d-51.09223869999999!3d-28.938203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951e923e9c882061%3A0xbf9d4903cbce19d5!2sForte%20Restauradora%20De%20Caminh%C3%B5es!5e0!3m2!1spt-BR!2sbr!4v1781718133913!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-card">
+                    <h3>📍 Endereço</h3>
+                    <p>BR 116 KM 110, 4001 - BELA VISTA<br>São Marcos, RS - 95190000</p>
+                </div>
+                <div class="contact-card">
+                    <h3>📞 Telefone</h3>
+                    <a href="tel:(54)32914196">(54) 3291-4196</a>
+                </div>
+                <div class="contact-card">
+                    <h3>✉️ E-mail</h3>
+                    <a href="mailto:forte@forterestauradora.com.br">forte@forterestauradora.com.br</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="https://cdn.dooca.store/160409/files/copia-de-forte-restauradora-modelo-kit-marca-1.png?v=1726685810" alt="Forte Restauradora" style="height: 50px; width: auto; margin-bottom: 1rem; filter: brightness(0) invert(1);" loading="lazy">
+                    <p>Recuperação veicular e restauro de caminhões com qualidade e comprometimento. Integrante do Grupo Campagnaro.</p>
+                    <p style="margin-top: 1rem;"><strong>CLAUDEMIR SANDI EIRELI - ME</strong><br>CNPJ 18.908.952/0001-73<br>BR 116 KM 110, 4001 - BELA VISTA<br>SÃO MARCOS/RS - CEP 95190000</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#portfolio">Portfólio</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><a href="https://api.whatsapp.com/send?l=pt_br&phone=555432914196" target="_blank">📱 WhatsApp: (54) 3291-4196</a></li>
+                        <li><a href="tel:(54)32914196">📞 Telefone: (54) 3291-4196</a></li>
+                        <li><a href="mailto:forte@forterestauradora.com.br">✉️ E-mail: forte@forterestauradora.com.br</a></li>
+                        <li>📍 São Marcos – RS</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <img src="https://cdn.dooca.store/160409/files/copia-de-forte-restauradora-modelo-kit-marca-1.png?v=1726685810" alt="Forte Restauradora" style="height: 40px; width: auto; filter: brightness(0) invert(1);" loading="lazy">
+                    <p>© 2026 Forte Restauradora. Todos os direitos reservados.</p>
+                </div>
+                <div class="social-icons">
+                    <a href="#" title="Facebook">f</a>
+                    <a href="#" title="Instagram">📷</a>
+                    <a href="#" title="LinkedIn">in</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://api.whatsapp.com/send?l=pt_br&phone=555432914196" target="_blank" class="floating-whatsapp" title="Contato via WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3 .97 4.29L2.05 22l6.03-1.98C10.19 21.89 11.06 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-.89 0-1.74-.15-2.56-.43l-.18-.07-1.9.63.65-1.91-.08-.19C4.86 16.55 4 14.35 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm3.89-12.11c-.37-.18-2.21-1.09-2.56-1.21-.35-.13-.6-.2-.85.2-.25.4-.97 1.21-1.19 1.46-.22.25-.44.28-.81.1-.37-.18-1.56-.58-2.97-1.84-1.1-.98-1.84-2.19-2.06-2.59-.22-.4-.02-.61.17-.81.17-.17.37-.44.56-.67.19-.22.25-.38.37-.63.13-.25.06-.47-.03-.66-.09-.18-.85-2.05-1.17-2.8-.31-.73-.62-.63-.85-.64-.22 0-.47-.03-.72-.03-.25 0-.66.09-.99.45-.34.36-1.29 1.26-1.29 3.08 0 1.82 1.32 3.57 1.5 3.82.19.25 2.65 4.05 6.42 5.68.9.39 1.6.62 2.15.8.9.28 1.72.24 2.37.14.72-.1 2.21-.9 2.52-1.77.31-.87.31-1.61.22-1.77-.09-.16-.34-.25-.71-.43z"/>
+        </svg>
+    </a>
+
+    <script>
+        // Performance: Defer non-critical scripts
+        if ('loading' in HTMLImageElement.prototype) {
+            // Native lazy loading supported
+        } else {
+            // Fallback for older browsers
+            document.addEventListener('DOMContentLoaded', function() {
+                const images = document.querySelectorAll('img[loading="lazy"]');
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.dataset.src || img.src;
+                            observer.unobserve(img);
+                        }
+                    });
+                });
+                images.forEach(img => imageObserver.observe(img));
+            });
+        }
+
+        // Menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+        
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+
+        // Close menu when link is clicked
+        document.querySelectorAll('.menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.remove('active');
+            });
+        });
+
+        // Modal functions
+        function openModal(brand) {
+            const modal = document.getElementById('modal-' + brand);
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(brand) {
+            const modal = document.getElementById('modal-' + brand);
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Close modal when clicking outside
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // Slideshow
+        let slideIndex = 0;
+        
+        function currentSlide(n) {
+            showSlide(slideIndex = n);
+        }
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            const indicators = document.querySelectorAll('.indicator');
+            
+            if (n >= slides.length) slideIndex = 0;
+            if (n < 0) slideIndex = slides.length - 1;
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            indicators.forEach(ind => ind.classList.remove('active'));
+            
+            slides[slideIndex].classList.add('active');
+            indicators[slideIndex].classList.add('active');
+        }
+
+        // Auto-advance slideshow every 4 seconds
+        setInterval(() => {
+            slideIndex++;
+            showSlide(slideIndex);
+        }, 4000);
+
+        // Show header CTA on desktop
+        const headerCta = document.getElementById('header-cta');
+        if (window.innerWidth >= 768) {
+            headerCta.style.display = 'inline-block';
+        }
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                headerCta.style.display = 'inline-block';
+            } else {
+                headerCta.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
