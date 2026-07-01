@@ -189,7 +189,7 @@
 
         /* HERO */
         .hero {
-            padding: 4rem 0;
+            padding: 3rem 0 2.5rem;
             background: var(--white);
         }
 
@@ -292,13 +292,13 @@
 
         /* PORTFOLIO */
         .portfolio {
-            padding: 5rem 0;
+            padding: 3.5rem 0;
             background: var(--white);
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2.25rem;
         }
 
         .section-header h2 {
@@ -452,7 +452,7 @@
 
         /* SERVICES */
         .services {
-            padding: 5rem 0;
+            padding: 3.5rem 0;
             background: var(--light-grey);
         }
 
@@ -503,7 +503,7 @@
 
         /* ABOUT */
         .about {
-            padding: 5rem 0;
+            padding: 3.5rem 0;
             background: var(--white);
         }
 
@@ -620,7 +620,7 @@
 
         /* CONTACT */
         .contact {
-            padding: 5rem 0;
+            padding: 3.5rem 0;
             background: var(--light-grey);
         }
 
@@ -683,6 +683,38 @@
 
         .contact-card a:hover {
             color: var(--dark-blue);
+        }
+
+        /* GROUP SITES */
+        .group-sites-bar {
+            background: #f5f5f5;
+            border-top: 1px solid #e2e2e2;
+            border-bottom: 1px solid #e2e2e2;
+        }
+
+        .group-sites-links {
+            min-height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.75rem 1.75rem;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+        }
+
+        .group-sites-links a {
+            color: #2b2b2b;
+            font-size: 0.82rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.15s ease;
+        }
+
+        .group-sites-links a:hover {
+            color: #000;
+            text-decoration: underline;
+            text-underline-offset: 3px;
         }
 
         /* FOOTER */
@@ -933,7 +965,7 @@
             }
 
             .hero {
-                padding-top: 2.5rem;
+                padding: 2.5rem 0 1.5rem;
             }
 
             .floating-whatsapp {
@@ -952,6 +984,17 @@
 
         /* RESPONSIVE */
         @media (max-width: 767px) {
+            .portfolio,
+            .services,
+            .about,
+            .contact {
+                padding: 3rem 0;
+            }
+
+            .section-header {
+                margin-bottom: 2rem;
+            }
+
             .hero-content h1 {
                 font-size: 1.8rem;
             }
@@ -962,6 +1005,16 @@
 
             .contact-info {
                 grid-template-columns: 1fr;
+            }
+
+            .group-sites-links {
+                justify-content: center;
+                gap: 0.65rem 1.15rem;
+                text-align: center;
+            }
+
+            .group-sites-links a {
+                font-size: 0.78rem;
             }
 
             .footer-grid {
@@ -1285,6 +1338,15 @@
             </div>
         </div>
     </section>
+
+    <!-- GROUP SITES -->
+    <div class="group-sites-bar">
+        <nav class="container group-sites-links" aria-label="Outros sites do Grupo Campagnaro">
+            <a href="https://www.campagnaro.com.br/" target="_blank" rel="noopener">Campagnaro Truck Center</a>
+            <a href="https://www.demolidoraforte.com.br/" target="_blank" rel="noopener">Forte Demolidora</a>
+            <a href="https://www.campagnarocaminhoes.com.br/" target="_blank" rel="noopener">Caminhões e Carretas</a>
+        </nav>
+    </div>
 
     <!-- FOOTER -->
     <footer>
