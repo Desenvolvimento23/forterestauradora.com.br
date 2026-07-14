@@ -1141,15 +1141,21 @@
             }
 
             .floating-whatsapp {
-                width: 56px;
-                height: 56px;
-                right: max(0.875rem, env(safe-area-inset-right));
-                bottom: max(0.875rem, env(safe-area-inset-bottom));
+                width: 52px;
+                height: 52px;
+                right: max(1rem, env(safe-area-inset-right));
+                bottom: max(1.35rem, calc(env(safe-area-inset-bottom) + 0.9rem));
+                transition: none;
+            }
+
+            .floating-whatsapp:hover {
+                background: var(--success-green);
+                box-shadow: 0 3px 10px rgba(37, 211, 102, 0.24);
             }
 
             .floating-whatsapp svg {
-                width: 30px;
-                height: 30px;
+                width: 28px;
+                height: 28px;
             }
         }
 
@@ -1745,6 +1751,7 @@
     </script>
 </body>
 </html>
+
 
 
 
