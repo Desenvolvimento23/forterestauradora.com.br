@@ -1135,13 +1135,21 @@
             nav {
                 display: grid;
                 grid-template-columns: auto minmax(0, 1fr);
+                align-items: center;
                 justify-content: start;
-                padding: 0.75rem 0;
-                gap: 0.9rem;
+                padding: 0.7rem 0;
+                gap: 0.55rem;
+            }
+
+            .logo {
+                width: auto;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
             }
 
             .logo img {
-                height: 64px;
+                height: 58px;
             }
 
             .menu-toggle {
@@ -1150,21 +1158,22 @@
 
             .menu {
                 order: initial;
-                grid-column: 1 / -1;
+                position: static;
+                top: auto;
+                left: auto;
+                right: auto;
                 width: 100%;
                 display: flex !important;
-                position: static;
                 flex-direction: row;
                 flex-wrap: nowrap;
-                align-items: center;
                 justify-content: center;
-                gap: 0.35rem;
-                padding: 0.25rem 0 0;
-                overflow-x: auto;
-                overflow-y: hidden;
+                align-items: center;
+                align-self: center;
+                gap: 0.22rem;
+                padding: 0;
+                overflow: visible;
                 background: transparent;
                 border-bottom: 0;
-                -webkit-overflow-scrolling: touch;
                 scrollbar-width: none;
             }
 
@@ -1174,21 +1183,22 @@
 
             .menu a {
                 flex: 0 0 auto;
-                padding: 0.48rem 0.58rem;
+                padding: 0.38rem 0.36rem;
                 border: 1px solid var(--light-grey);
                 border-radius: 999px;
                 background: #f7f7f7;
                 color: var(--dark-blue);
-                font-size: 0.68rem;
+                font-size: 0.56rem;
                 font-weight: 700;
                 text-transform: uppercase;
                 letter-spacing: 0;
                 line-height: 1;
                 white-space: nowrap;
+                text-align: center;
             }
 
             .hero {
-                padding: 2.5rem 0 1.5rem;
+                padding: 2rem 0 1.5rem;
             }
 
             .floating-whatsapp {
