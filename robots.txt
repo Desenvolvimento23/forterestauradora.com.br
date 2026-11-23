@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://forterestauradora.com.br/sitemap.xml
