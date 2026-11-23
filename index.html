@@ -299,8 +299,64 @@
 
         /* HERO */
         .hero {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
             padding: 3rem 0 2.5rem;
             background: var(--white);
+        }
+
+        .hero-background-slideshow {
+            position: absolute;
+            inset: -1.5rem;
+            z-index: -2;
+            overflow: hidden;
+        }
+
+        .hero-background-slide {
+            position: absolute;
+            inset: 0;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            filter: blur(4px);
+            transform: scale(1.02);
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
+        }
+
+        .hero-background-slide.active {
+            opacity: 0.38;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: rgba(255, 255, 255, 0.64);
+        }
+
+        .hero > .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-background-slide {
+                transition: none;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero-background-slideshow,
+            .hero::after {
+                display: none;
+            }
+
+            .hero-background-slide {
+                filter: none;
+            }
         }
 
         .hero-grid {
@@ -1472,7 +1528,7 @@
             }
         }
     </style>
-    <link rel="preload" as="image" href="assets/images/APNQkAEuy73IhhdV_ng57MIyfIaMo6f7OKSoDwKNNsxq23QQJzleC7_hix87wR_RvkvwnRethIMwgpsXpOxosd3-jRHwRMzn_DujO6vZA0PUn4JwDZnehrUt755rXWRcdbueybx0Qj7N=s680-w680-h510-rw.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/images/hero-background.webp" fetchpriority="high">
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
@@ -1568,6 +1624,10 @@
 
     <!-- HERO -->
     <section id="inicio" class="hero">
+        <div class="hero-background-slideshow" aria-hidden="true">
+            <div class="hero-background-slide active" style="background-image: url('assets/images/hero-background.webp');"></div>
+            <div class="hero-background-slide" style="background-image: url('assets/images/hero-background-2.webp');"></div>
+        </div>
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content animate-in">
@@ -1592,7 +1652,7 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="assets/images/APNQkAEuy73IhhdV_ng57MIyfIaMo6f7OKSoDwKNNsxq23QQJzleC7_hix87wR_RvkvwnRethIMwgpsXpOxosd3-jRHwRMzn_DujO6vZA0PUn4JwDZnehrUt755rXWRcdbueybx0Qj7N=s680-w680-h510-rw.webp" alt="Caminhão restaurado pela Forte Restauradora em São Marcos RS" loading="eager" width="680" height="382" decoding="async">
+                    <img src="assets/images/hero-background.webp" alt="Sede da Forte Restauradora em São Marcos RS vista de cima" loading="eager" width="1920" height="1080" decoding="async">
                 </div>
             </div>
         </div>
@@ -2115,6 +2175,17 @@
             slideIndex++;
             showSlide(slideIndex);
         }, 4000);
+
+        // Alterna as imagens de fundo do hero; novas imagens podem ser adicionadas ao bloco acima.
+        const heroBackgroundSlides = document.querySelectorAll('.hero-background-slide');
+        let heroBackgroundIndex = 0;
+        if (heroBackgroundSlides.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            setInterval(() => {
+                heroBackgroundSlides[heroBackgroundIndex].classList.remove('active');
+                heroBackgroundIndex = (heroBackgroundIndex + 1) % heroBackgroundSlides.length;
+                heroBackgroundSlides[heroBackgroundIndex].classList.add('active');
+            }, 6000);
+        }
 
     </script>
 
