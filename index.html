@@ -460,8 +460,40 @@
 
         /* PORTFOLIO */
         .portfolio {
-            padding: 3.5rem 0;
+            position: relative;
+            overflow: hidden;
+            padding: 4.5rem 0;
             background: var(--white);
+        }
+
+        .portfolio > .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .portfolio .section-header {
+            text-align: left;
+            margin-bottom: 2.5rem;
+        }
+
+        .portfolio .section-header h2 {
+            color: var(--dark-blue);
+            margin-bottom: 0.75rem;
+        }
+
+        .portfolio .section-header p {
+            color: #666;
+            margin: 0;
+        }
+
+        .portfolio-eyebrow {
+            display: block;
+            margin-bottom: 0.7rem;
+            color: #6ee58a;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
         }
 
         .section-header {
@@ -505,39 +537,88 @@
 
         .brand-card {
             min-width: 0;
+            position: relative;
+            overflow: visible;
             background: var(--white);
-            border: 2px solid var(--light-grey);
-            border-radius: 0.5rem;
-            padding: 2rem;
-            text-align: center;
+            border: 1px solid var(--light-grey);
+            border-radius: 1rem;
+            padding: 1.5rem 1.25rem 1.25rem;
+            text-align: left;
             cursor: pointer;
-            transition: border-color 0.15s ease, box-shadow 0.15s ease;
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 180px;
+            min-height: 205px;
         }
 
         .brand-card:hover {
+            transform: translateY(-0.4rem);
             border-color: var(--industrial-blue);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            background: var(--white);
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
         }
 
         .brand-card img {
-            height: 120px;
+            height: 124px;
             width: auto;
             max-width: 100%;
             object-fit: contain;
-            margin-bottom: 1rem;
+            margin: 0 auto 1rem;
+            transition: transform 0.3s ease;
+            will-change: transform;
+        }
+
+        .brand-card:hover img {
+            transform: scale(1.36);
         }
 
         .brand-card h3 {
-            font-size: 1.1rem;
+            width: 100%;
+            font-size: 0.95rem;
             font-weight: 700;
             color: var(--dark-blue);
             text-transform: uppercase;
-            margin: 0;
+            letter-spacing: 0.04em;
+            margin: 0 0 0.75rem;
+        }
+
+        .brand-card-cta {
+            width: 100%;
+            padding-top: 0.7rem;
+            border-top: 1px solid #e7ebee;
+            color: #60717d;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        @media (max-width: 639px) {
+            .portfolio {
+                padding: 3.5rem 0;
+            }
+
+            .portfolio .section-header {
+                margin-bottom: 1.75rem;
+            }
+
+            .brand-card {
+                min-height: 175px;
+                padding: 1rem 0.85rem 0.9rem;
+            }
+
+            .brand-card img {
+                height: 96px;
+                margin-bottom: 0.7rem;
+            }
+
+            .brand-card h3 {
+                font-size: 0.78rem;
+            }
+
+            .brand-card-cta {
+                font-size: 0.66rem;
+            }
         }
 
 
@@ -733,15 +814,114 @@
         }
 
         .modal-gallery img {
+            position: relative;
             width: 100%;
             height: auto;
             border-radius: 0.5rem;
             cursor: pointer;
-            transition: opacity 0.15s ease;
+            transition: opacity 0.2s ease, transform 0.25s ease, box-shadow 0.25s ease;
+            transform-origin: center center;
         }
 
-        .modal-gallery img:hover {
-            opacity: 0.88;
+        @media (min-width: 768px) {
+            .modal-gallery img:hover {
+                opacity: 1;
+            }
+        }
+
+        .image-lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            display: grid;
+            place-items: center;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.9);
+            cursor: zoom-out;
+            animation: fadeIn 0.18s ease;
+        }
+
+        .image-lightbox[hidden] {
+            display: none;
+        }
+
+        .image-lightbox.hover-preview {
+            pointer-events: auto;
+        }
+
+        .image-lightbox img {
+            max-width: 92vw;
+            max-height: 88vh;
+            object-fit: contain;
+            border-radius: 0.5rem;
+            box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.45);
+            cursor: default;
+        }
+
+        .image-lightbox-nav {
+            position: absolute;
+            top: 50%;
+            display: grid;
+            place-items: center;
+            width: 3.25rem;
+            height: 3.25rem;
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.42);
+            color: var(--white);
+            font-size: 2rem;
+            line-height: 1;
+            cursor: pointer;
+            transform: translateY(-50%);
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .image-lightbox-nav:hover {
+            background: rgba(33, 189, 69, 0.85);
+            transform: translateY(-50%) scale(1.06);
+        }
+
+        .image-lightbox-prev {
+            left: 1.25rem;
+        }
+
+        .image-lightbox-next {
+            right: 1.25rem;
+        }
+
+        .image-lightbox-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.25rem;
+            width: 2.75rem;
+            height: 2.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.35);
+            color: var(--white);
+            font-size: 1.7rem;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+        @media (max-width: 767px) {
+            .image-lightbox {
+                padding: 1rem;
+            }
+
+            .image-lightbox-nav {
+                width: 2.75rem;
+                height: 2.75rem;
+                font-size: 1.6rem;
+            }
+
+            .image-lightbox-prev {
+                left: 0.5rem;
+            }
+
+            .image-lightbox-next {
+                right: 0.5rem;
+            }
         }
 
         /* SERVICES */
@@ -1705,34 +1885,41 @@
     <section id="portfolio" class="portfolio">
         <div class="container">
             <div class="section-header animate-in">
+                <span class="portfolio-eyebrow">Portfólio de resultados</span>
                 <h2>Restaurações Feitas</h2>
-                <p>Clique em cada marca para ver as restaurações realizadas.</p>
+                <p>Escolha uma marca e veja de perto o padrão de acabamento da Forte Restauradora.</p>
             </div>
 
             <div class="brands-grid">
                 <div class="brand-card" onclick="openModal('scania')">
                     <img src="assets/images/1-13.webp" alt="Scania" loading="lazy" width="300" height="300" decoding="async">
                     <h3>Scania</h3>
+                    <span class="brand-card-cta">Ver restaurações →</span>
                 </div>
                 <div class="brand-card" onclick="openModal('volvo')">
                     <img src="assets/images/2-9.webp" alt="Volvo" loading="lazy" width="300" height="300" decoding="async">
                     <h3>Volvo</h3>
+                    <span class="brand-card-cta">Ver restaurações →</span>
                 </div>
                 <div class="brand-card" onclick="openModal('mercedes')">
                     <img src="assets/images/4-4.webp" alt="Mercedes-Benz" loading="lazy" width="300" height="300" decoding="async">
                     <h3>Mercedes-Benz</h3>
+                    <span class="brand-card-cta">Ver restaurações →</span>
                 </div>
                 <div class="brand-card" onclick="openModal('vw')">
                     <img src="assets/images/5-3.webp" alt="Volkswagen" loading="lazy" width="500" height="500" decoding="async">
                     <h3>Volkswagen</h3>
+                    <span class="brand-card-cta">Ver restaurações →</span>
                 </div>
                 <div class="brand-card" onclick="openModal('daf')">
                     <img src="assets/images/6-9.webp" alt="DAF" loading="lazy" width="300" height="300" decoding="async">
                     <h3>DAF</h3>
+                    <span class="brand-card-cta">Ver restaurações →</span>
                 </div>
                 <div class="brand-card" onclick="openModal('iveco')">
                     <img src="assets/images/3-9.webp" alt="Iveco" loading="lazy" width="300" height="300" decoding="async">
                     <h3>Iveco</h3>
+                    <span class="brand-card-cta">Ver restaurações →</span>
                 </div>
             </div>
         </div>
@@ -2088,6 +2275,98 @@
                     document.body.style.overflow = 'auto';
                 }
             });
+        });
+
+        // Image preview: desktop uses hover zoom; mobile opens a focused lightbox on tap.
+        const imageLightbox = document.createElement('div');
+        imageLightbox.className = 'image-lightbox';
+        imageLightbox.hidden = true;
+        imageLightbox.innerHTML = '<button class="image-lightbox-close" type="button" aria-label="Fechar imagem ampliada">×</button><button class="image-lightbox-nav image-lightbox-prev" type="button" aria-label="Imagem anterior">‹</button><img alt=""><button class="image-lightbox-nav image-lightbox-next" type="button" aria-label="Próxima imagem">›</button>';
+        document.body.appendChild(imageLightbox);
+        const imageLightboxImage = imageLightbox.querySelector('img');
+        const imageLightboxClose = imageLightbox.querySelector('.image-lightbox-close');
+        const imageLightboxPrev = imageLightbox.querySelector('.image-lightbox-prev');
+        const imageLightboxNext = imageLightbox.querySelector('.image-lightbox-next');
+        let imageLightboxHoverPreview = false;
+        let imageLightboxImages = [];
+        let imageLightboxIndex = 0;
+        let imageLightboxHoverCloseTimer;
+
+        function closeImageLightbox() {
+            clearTimeout(imageLightboxHoverCloseTimer);
+            imageLightboxHoverPreview = false;
+            imageLightbox.classList.remove('hover-preview');
+            imageLightbox.hidden = true;
+            imageLightboxImage.removeAttribute('src');
+            imageLightboxImages = [];
+        }
+
+        function updateImageLightbox() {
+            const image = imageLightboxImages[imageLightboxIndex];
+            if (!image) return;
+            imageLightboxImage.src = image.currentSrc || image.src;
+            imageLightboxImage.alt = image.alt;
+        }
+
+        function showImageLightbox(image, hoverPreview = false) {
+            imageLightboxHoverPreview = hoverPreview;
+            imageLightbox.classList.toggle('hover-preview', hoverPreview);
+            imageLightboxImages = Array.from(image.closest('.modal-gallery').querySelectorAll('img'));
+            imageLightboxIndex = Math.max(0, imageLightboxImages.indexOf(image));
+            updateImageLightbox();
+            imageLightbox.hidden = false;
+        }
+
+        function changeLightboxImage(step) {
+            if (!imageLightboxImages.length) return;
+            imageLightboxIndex = (imageLightboxIndex + step + imageLightboxImages.length) % imageLightboxImages.length;
+            updateImageLightbox();
+        }
+
+        document.querySelectorAll('.modal-gallery img').forEach((image) => {
+            image.addEventListener('click', (event) => {
+                event.stopPropagation();
+                showImageLightbox(image);
+            });
+
+            image.addEventListener('mouseenter', () => {
+                if (window.matchMedia('(min-width: 768px)').matches) {
+                    showImageLightbox(image, true);
+                }
+            });
+
+            image.addEventListener('mouseleave', () => {
+                if (imageLightboxHoverPreview) {
+                    imageLightboxHoverCloseTimer = setTimeout(() => {
+                        if (imageLightboxHoverPreview) closeImageLightbox();
+                    }, 250);
+                }
+            });
+        });
+
+        imageLightboxClose.addEventListener('click', closeImageLightbox);
+        imageLightbox.addEventListener('mouseenter', () => {
+            clearTimeout(imageLightboxHoverCloseTimer);
+            if (imageLightboxHoverPreview) {
+                imageLightboxHoverPreview = false;
+                imageLightbox.classList.remove('hover-preview');
+            }
+        });
+        imageLightboxPrev.addEventListener('click', (event) => {
+            event.stopPropagation();
+            changeLightboxImage(-1);
+        });
+        imageLightboxNext.addEventListener('click', (event) => {
+            event.stopPropagation();
+            changeLightboxImage(1);
+        });
+        imageLightbox.addEventListener('click', (event) => {
+            if (event.target === imageLightbox) closeImageLightbox();
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') closeImageLightbox();
+            if (!imageLightbox.hidden && event.key === 'ArrowLeft') changeLightboxImage(-1);
+            if (!imageLightbox.hidden && event.key === 'ArrowRight') changeLightboxImage(1);
         });
 
         // Slideshow
