@@ -540,17 +540,128 @@
 
 
         /* BEFORE AND AFTER */
-        .before-after { padding: 2rem 0 3.5rem; background: var(--light-grey); }
-        .before-after-carousel { position: relative; width: 100%; max-width: 680px; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 0.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.1); background: var(--white); margin: 0 auto; --before-after-position: 50%; }
-        .before-after-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
-        .before-after-image-after { clip-path: inset(0 0 0 var(--before-after-position)); }
-        .before-after-divider { position: absolute; top: 0; bottom: 0; left: var(--before-after-position); width: 3px; background: var(--white); transform: translateX(-50%); z-index: 2; pointer-events: none; }
-        .before-after-handle { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 2.75rem; height: 2.75rem; border-radius: 50%; background: var(--white); color: var(--dark-blue); display: inline-flex; align-items: center; justify-content: center; font-size: 1.25rem; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
-        .before-after-label { position: absolute; top: 1rem; z-index: 3; padding: 0.45rem 0.7rem; border-radius: 0.3rem; color: var(--white); font-size: 0.8rem; font-weight: 700; pointer-events: none; transition: opacity 0.18s ease; }
-        .before-after-label-before { left: 1rem; background: #ed4b56; }
-        .before-after-label-after { right: 1rem; background: #21bd45; }
-        .before-after-range { position: absolute; inset: 0; z-index: 4; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; }
-        .before-after-range:focus-visible { opacity: 0.01; outline: 3px solid var(--electric-blue); }
+        .before-after {
+            padding: 2rem 0 3.5rem;
+            background: var(--light-grey);
+        }
+        .before-after-comparison {
+            position: relative;
+            width: 100%;
+            max-width: 540px;
+            aspect-ratio: 4 / 5;
+            overflow: hidden;
+            border: 4px solid var(--white);
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.16);
+            background: var(--white);
+            margin: 0 auto;
+            user-select: none;
+            touch-action: none;
+        }
+
+        @media (max-width: 767px) {
+            .before-after-comparison {
+                width: calc(100% - 1.25rem);
+            }
+        }
+
+        .before-after-image,
+        .before-after-image img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .before-after-image img {
+            display: block;
+            object-fit: cover;
+            pointer-events: none;
+        }
+
+        .before-after-image-after {
+            clip-path: inset(0 0 0 50%);
+        }
+
+        .before-after-label {
+            position: absolute;
+            top: 0.85rem;
+            z-index: 3;
+            padding: 0.35rem 0.6rem;
+            border-radius: 0.25rem;
+            color: var(--white);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            transition: opacity 0.45s ease, transform 0.45s ease;
+        }
+
+        .before-after-label.is-hidden {
+            opacity: 0;
+            transform: translateY(-0.45rem) scale(0.82);
+        }
+
+        .before-after-label-before {
+            left: 0.85rem;
+            background: #ef4f5f;
+        }
+
+        .before-after-label-after {
+            right: 0.85rem;
+            background: #20b968;
+        }
+
+        .before-after-handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            z-index: 4;
+            width: 3px;
+            background: var(--white);
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+
+        .before-after-handle::after {
+            content: "↔";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: grid;
+            place-items: center;
+            width: 2.25rem;
+            height: 2.25rem;
+            border: 3px solid var(--white);
+            border-radius: 50%;
+            background: var(--white);
+            color: var(--dark-blue);
+            font-size: 1.15rem;
+            font-weight: 700;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+            transform: translate(-50%, -50%);
+        }
+
+        .before-after-range {
+            position: absolute;
+            inset: 0;
+            z-index: 5;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            opacity: 0;
+            cursor: ew-resize;
+        }
+
+        .before-after-range:focus-visible + .before-after-handle::after {
+            outline: 3px solid var(--warm-orange);
+            outline-offset: 3px;
+        }
+
+        .before-after-mobile-break { display: none; }
         /* MODAL */
         .modal {
             display: none;
@@ -1631,15 +1742,20 @@
         <div class="container">
             <div class="section-header animate-in">
                 <h2>Antes e Depois</h2>
-                <p>Arraste a barra para ver o resultado da recuperação realizada pela Forte Restauradora.</p>
+                <p>Arraste a barra para comparar o caminhão antes e depois da recuperação.</p>
             </div>
-            <div class="before-after-carousel" aria-label="Comparador interativo de antes e depois">
-                <img class="before-after-image before-after-image-before" src="assets/images/antes-depois/1.webp" alt="Caminhão antes da recuperação" loading="lazy" width="1080" height="1350" decoding="async">
-                <img class="before-after-image before-after-image-after" src="assets/images/antes-depois/2.webp" alt="Caminhão depois da recuperação" loading="lazy" width="1080" height="1350" decoding="async">
-                <span class="before-after-label before-after-label-before" id="beforeAfterLabelBefore">ANTES</span>
-                <span class="before-after-label before-after-label-after" id="beforeAfterLabelAfter">DEPOIS</span>
-                <div class="before-after-divider" aria-hidden="true"><span class="before-after-handle">↔</span></div>
-                <input class="before-after-range" id="beforeAfterRange" type="range" min="0" max="100" value="50" aria-label="Arraste para comparar o antes e o depois">
+
+            <div class="before-after-comparison" id="before-after-comparison" aria-label="Comparador arrastável de antes e depois">
+                <div class="before-after-image before-after-image-before">
+                    <img src="assets/images/antes-depois/scania-vermelha-antes.webp" alt="Scania vermelha antes da recuperação" loading="lazy" width="1080" height="1350" decoding="async">
+                </div>
+                <div class="before-after-image before-after-image-after" id="before-after-after">
+                    <img src="assets/images/antes-depois/scania-vermelha-depois.webp" alt="Scania vermelha depois da recuperação" loading="lazy" width="1080" height="1350" decoding="async">
+                </div>
+                <span class="before-after-label before-after-label-before" id="before-after-label-before">Antes</span>
+                <span class="before-after-label before-after-label-after" id="before-after-label-after">Depois</span>
+                <div class="before-after-handle" id="before-after-handle" aria-hidden="true"></div>
+                <input class="before-after-range" id="before-after-range" type="range" min="0" max="100" value="50" aria-label="Arraste para comparar o antes e o depois">
             </div>
         </div>
     </section>
@@ -1745,59 +1861,6 @@
             </div>
         </div>
     </div>
-
-    <!-- SERVICES -->
-    <section id="servicos" class="services">
-        <div class="container">
-
-            <div class="services-panel">
-                <div class="service-intro">
-                    <div>
-                        <strong>Do diagnóstico à entrega</strong>
-                        <h3>Soluções completas para caminhões</h3>
-                        <p>Centralizamos pintura, estrutura, recuperação e acabamento para devolver o caminhão pronto para trabalhar com segurança em São Marcos e região.</p>
-                    </div>
-                    <div class="service-tags" aria-label="Diferenciais dos serviços">
-                        <span>Cabines</span>
-                        <span>Chassi</span>
-                        <span>Baús</span>
-                        <span>Carrocerias</span>
-                    </div>
-                </div>
-
-                <div class="services-list">
-                    <div class="service-card">
-                        <span class="service-step">01</span>
-                        <div>
-                            <h3>Pintura</h3>
-                            <p>Preparação e pintura automotiva de alta durabilidade em cabines, baús e estruturas.</p>
-                        </div>
-                    </div>
-                    <div class="service-card">
-                        <span class="service-step">02</span>
-                        <div>
-                            <h3>Recuperação Veicular</h3>
-                            <p>Restauro de veículos pesados danificados, recuperando segurança, estética e valor.</p>
-                        </div>
-                    </div>
-                    <div class="service-card">
-                        <span class="service-step">03</span>
-                        <div>
-                            <h3>Reforma Completa</h3>
-                            <p>Reforma geral de cabines e carrocerias com acabamento profissional e atenção aos detalhes.</p>
-                        </div>
-                    </div>
-                    <div class="service-card">
-                        <span class="service-step">04</span>
-                        <div>
-                            <h3>Alinhamento de Chassi</h3>
-                            <p>Correção e alinhamento técnico para garantir estabilidade e segurança no transporte.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- ABOUT -->
     <section id="sobre" class="about">
@@ -2051,19 +2114,22 @@
         }
 
 
-        const beforeAfterRange = document.getElementById('beforeAfterRange');
-        const beforeAfterCarousel = document.querySelector('.before-after-carousel');
-        const beforeAfterLabelBefore = document.getElementById('beforeAfterLabelBefore');
-        const beforeAfterLabelAfter = document.getElementById('beforeAfterLabelAfter');
+        const beforeAfterRange = document.getElementById('before-after-range');
+        const beforeAfterAfter = document.getElementById('before-after-after');
+        const beforeAfterHandle = document.getElementById('before-after-handle');
+        const beforeAfterLabelBefore = document.getElementById('before-after-label-before');
+        const beforeAfterLabelAfter = document.getElementById('before-after-label-after');
         function updateBeforeAfter(value) {
             const position = Number(value);
-            beforeAfterCarousel.style.setProperty('--before-after-position', position + '%');
-            beforeAfterLabelBefore.style.opacity = position > 50 ? '0' : '1';
-            beforeAfterLabelAfter.style.opacity = position < 50 ? '0' : '1';
+            beforeAfterAfter.style.clipPath = `inset(0 0 0 ${position}%)`;
+            beforeAfterHandle.style.left = `${position}%`;
+            beforeAfterLabelBefore.classList.toggle('is-hidden', position < 50);
+            beforeAfterLabelAfter.classList.toggle('is-hidden', position > 50);
         }
-        beforeAfterRange.addEventListener('input', (event) => updateBeforeAfter(event.target.value));
-        updateBeforeAfter(beforeAfterRange.value);
-
+        if (beforeAfterRange && beforeAfterAfter && beforeAfterHandle) {
+            beforeAfterRange.addEventListener('input', (event) => updateBeforeAfter(event.target.value));
+            updateBeforeAfter(beforeAfterRange.value);
+        }
         // Auto-advance slideshow every 4 seconds
         setInterval(() => {
             slideIndex++;
