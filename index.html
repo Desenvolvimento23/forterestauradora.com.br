@@ -540,87 +540,17 @@
 
 
         /* BEFORE AND AFTER */
-        .before-after {
-            padding: 2rem 0 3.5rem;
-            background: var(--light-grey);
-        }
-        .before-after-carousel {
-            position: relative;
-            width: 100%;
-            max-width: 680px;
-            aspect-ratio: 4 / 5;
-            overflow: hidden;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            background: var(--white);
-            margin: 0 auto;
-        }
-
-        .before-after-slide {
-            display: none;
-            width: 100%;
-            height: 100%;
-        }
-
-        .before-after-slide.active { display: block; }
-
-        .before-after-slide img {
-            width: 100%;
-            height: 100%;
-            display: block;
-            object-fit: cover;
-        }
-
-        .before-after-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 2;
-            width: 2.75rem;
-            height: 2.75rem;
-            border: 0;
-            border-radius: 50%;
-            background: rgba(0,0,0,0.58);
-            color: var(--white);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-
-        .before-after-arrow:hover { background: rgba(0,0,0,0.76); }
-        .before-after-arrow svg { width: 1.35rem; height: 1.35rem; stroke: currentColor; }
-        .before-after-arrow-prev { left: 0.85rem; }
-        .before-after-arrow-next { right: 0.85rem; }
-
-        .before-after-indicators {
-            position: absolute;
-            bottom: 1rem;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 0.5rem;
-            z-index: 2;
-        }
-
-        .before-after-indicator {
-            width: 8px;
-            height: 8px;
-            border: 0;
-            padding: 0;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.6);
-            cursor: pointer;
-        }
-
-        .before-after-mobile-break { display: none; }
-
-        .before-after-mobile-break { display: none; }
-        .before-after-indicator.active {
-            width: 24px;
-            border-radius: 4px;
-            background: var(--electric-blue);
-        }
+        .before-after { padding: 2rem 0 3.5rem; background: var(--light-grey); }
+        .before-after-carousel { position: relative; width: 100%; max-width: 680px; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 0.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.1); background: var(--white); margin: 0 auto; --before-after-position: 50%; }
+        .before-after-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+        .before-after-image-after { clip-path: inset(0 0 0 var(--before-after-position)); }
+        .before-after-divider { position: absolute; top: 0; bottom: 0; left: var(--before-after-position); width: 3px; background: var(--white); transform: translateX(-50%); z-index: 2; pointer-events: none; }
+        .before-after-handle { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 2.75rem; height: 2.75rem; border-radius: 50%; background: var(--white); color: var(--dark-blue); display: inline-flex; align-items: center; justify-content: center; font-size: 1.25rem; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+        .before-after-label { position: absolute; top: 1rem; z-index: 3; padding: 0.45rem 0.7rem; border-radius: 0.3rem; color: var(--white); font-size: 0.8rem; font-weight: 700; pointer-events: none; transition: opacity 0.18s ease; }
+        .before-after-label-before { left: 1rem; background: #ed4b56; }
+        .before-after-label-after { right: 1rem; background: #21bd45; }
+        .before-after-range { position: absolute; inset: 0; z-index: 4; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; }
+        .before-after-range:focus-visible { opacity: 0.01; outline: 3px solid var(--electric-blue); }
         /* MODAL */
         .modal {
             display: none;
@@ -1701,36 +1631,15 @@
         <div class="container">
             <div class="section-header animate-in">
                 <h2>Antes e Depois</h2>
-                <p>Confira alguns resultados dos servicos realizados pela Forte<br class="before-after-mobile-break"> Restauradora.</p>
+                <p>Arraste a barra para ver o resultado da recuperação realizada pela Forte Restauradora.</p>
             </div>
-
-            <div class="before-after-carousel" aria-label="Galeria de antes e depois">
-                <div class="before-after-slide active">
-                    <img src="assets/images/antes-depois/1.webp" alt="Antes e depois de recuperação de caminhão Volvo" loading="lazy" width="1080" height="1350" decoding="async">
-                </div>
-                <div class="before-after-slide">
-                    <img src="assets/images/antes-depois/2.webp" alt="Antes e depois de recuperação de caminhão Scania vermelho" loading="lazy" width="1080" height="1350" decoding="async">
-                </div>
-                <div class="before-after-slide">
-                    <img src="assets/images/antes-depois/3.webp" alt="Antes e depois de recuperação de caminhão Mercedes-Benz" loading="lazy" width="1080" height="1350" decoding="async">
-                </div>
-                <div class="before-after-slide">
-                    <img src="assets/images/antes-depois/4.webp" alt="Antes e depois de recuperação de caminhão Scania branco" loading="lazy" width="1080" height="1350" decoding="async">
-                </div>
-
-                <button class="before-after-arrow before-after-arrow-prev" type="button" onclick="changeBeforeAfter(-1)" aria-label="Imagem anterior">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
-                </button>
-                <button class="before-after-arrow before-after-arrow-next" type="button" onclick="changeBeforeAfter(1)" aria-label="Próxima imagem">
-                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
-                </button>
-
-                <div class="before-after-indicators">
-                    <button class="before-after-indicator active" type="button" onclick="currentBeforeAfter(0)" aria-label="Ver imagem 1"></button>
-                    <button class="before-after-indicator" type="button" onclick="currentBeforeAfter(1)" aria-label="Ver imagem 2"></button>
-                    <button class="before-after-indicator" type="button" onclick="currentBeforeAfter(2)" aria-label="Ver imagem 3"></button>
-                    <button class="before-after-indicator" type="button" onclick="currentBeforeAfter(3)" aria-label="Ver imagem 4"></button>
-                </div>
+            <div class="before-after-carousel" aria-label="Comparador interativo de antes e depois">
+                <img class="before-after-image before-after-image-before" src="assets/images/antes-depois/1.webp" alt="Caminhão antes da recuperação" loading="lazy" width="1080" height="1350" decoding="async">
+                <img class="before-after-image before-after-image-after" src="assets/images/antes-depois/2.webp" alt="Caminhão depois da recuperação" loading="lazy" width="1080" height="1350" decoding="async">
+                <span class="before-after-label before-after-label-before" id="beforeAfterLabelBefore">ANTES</span>
+                <span class="before-after-label before-after-label-after" id="beforeAfterLabelAfter">DEPOIS</span>
+                <div class="before-after-divider" aria-hidden="true"><span class="before-after-handle">↔</span></div>
+                <input class="before-after-range" id="beforeAfterRange" type="range" min="0" max="100" value="50" aria-label="Arraste para comparar o antes e o depois">
             </div>
         </div>
     </section>
@@ -2142,34 +2051,19 @@
         }
 
 
-        let beforeAfterIndex = 0;
-
-        function currentBeforeAfter(n) {
-            showBeforeAfter(beforeAfterIndex = n);
+        const beforeAfterRange = document.getElementById('beforeAfterRange');
+        const beforeAfterCarousel = document.querySelector('.before-after-carousel');
+        const beforeAfterLabelBefore = document.getElementById('beforeAfterLabelBefore');
+        const beforeAfterLabelAfter = document.getElementById('beforeAfterLabelAfter');
+        function updateBeforeAfter(value) {
+            const position = Number(value);
+            beforeAfterCarousel.style.setProperty('--before-after-position', position + '%');
+            beforeAfterLabelBefore.style.opacity = position > 50 ? '0' : '1';
+            beforeAfterLabelAfter.style.opacity = position < 50 ? '0' : '1';
         }
+        beforeAfterRange.addEventListener('input', (event) => updateBeforeAfter(event.target.value));
+        updateBeforeAfter(beforeAfterRange.value);
 
-        function changeBeforeAfter(step) {
-            showBeforeAfter(beforeAfterIndex += step);
-        }
-
-        function showBeforeAfter(n) {
-            const slides = document.querySelectorAll('.before-after-slide');
-            const indicators = document.querySelectorAll('.before-after-indicator');
-
-            if (n >= slides.length) beforeAfterIndex = 0;
-            if (n < 0) beforeAfterIndex = slides.length - 1;
-
-            slides.forEach(slide => slide.classList.remove('active'));
-            indicators.forEach(indicator => indicator.classList.remove('active'));
-
-            slides[beforeAfterIndex].classList.add('active');
-            indicators[beforeAfterIndex].classList.add('active');
-        }
-
-        setInterval(() => {
-            beforeAfterIndex++;
-            showBeforeAfter(beforeAfterIndex);
-        }, 5000);
         // Auto-advance slideshow every 4 seconds
         setInterval(() => {
             slideIndex++;
