@@ -34,8 +34,9 @@
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&amp;display=swap"></noscript>
     
     <style>
         * {
@@ -1875,7 +1876,7 @@
     <section id="inicio" class="hero">
         <div class="hero-background-slideshow" aria-hidden="true">
             <div class="hero-background-slide active" style="background-image: url('assets/images/hero-background.webp');"></div>
-            <div class="hero-background-slide" style="background-image: url('assets/images/hero-background-2.webp');"></div>
+            <div class="hero-background-slide" data-background-image="assets/images/hero-background-2.webp"></div>
         </div>
         <div class="container">
             <div class="hero-grid">
@@ -2082,19 +2083,19 @@
         <div class="container">
             <div class="about-grid">
                 <div class="slideshow-container">
-                    <div class="slide active"><img src="assets/images/forte-sobre-01.webp" alt="Unidade da Forte Restauradora em São Marcos – imagem 1" loading="eager" width="1920" height="1080" decoding="async" fetchpriority="high"></div>
-                    <div class="slide"><img src="assets/images/forte-sobre-02.webp" alt="Unidade da Forte Restauradora em São Marcos – imagem 2" loading="lazy" width="1920" height="1080" decoding="async"></div>
-                    <div class="slide"><img src="assets/images/forte-sobre-03.webp" alt="Unidade da Forte Restauradora em São Marcos – imagem 3" loading="lazy" width="1920" height="1080" decoding="async"></div>
-                    <div class="slide"><img src="assets/images/forte-sobre-04.webp" alt="Unidade da Forte Restauradora em São Marcos – imagem 4" loading="lazy" width="1920" height="1080" decoding="async"></div>
-                    <div class="slide"><img src="assets/images/forte-sobre-05.webp" alt="Unidade da Forte Restauradora em São Marcos – imagem 5" loading="lazy" width="1920" height="1080" decoding="async"></div>
-                    <div class="slide"><img src="assets/images/forte-sobre-06.webp" alt="Unidade da Forte Restauradora em São Marcos – imagem 6" loading="lazy" width="1920" height="1080" decoding="async"></div>
-                    <div class="slide"><img src="assets/images/forte-sobre-07.webp" alt="Unidade da Forte Restauradora em São Marcos – imagem 7" loading="lazy" width="1920" height="1080" decoding="async"></div>
-                    <div class="slide"><img src="assets/images/forte-sobre-08.webp" alt="Unidade da Forte Restauradora em São Marcos – imagem 8" loading="lazy" width="1920" height="1080" decoding="async"></div>
-                    <div class="slide"><img src="assets/images/forte-sobre-09.webp" alt="Unidade da Forte Restauradora em São Marcos – imagem 9" loading="lazy" width="1920" height="1080" decoding="async"></div>
-                    <div class="slide"><img src="assets/images/forte-sobre-10.webp" alt="Unidade da Forte Restauradora em São Marcos – imagem 10" loading="lazy" width="1920" height="1080" decoding="async"></div>
-                    <div class="slide"><img src="assets/images/forte-sobre-11.webp" alt="Unidade da Forte Restauradora em São Marcos – imagem 11" loading="lazy" width="1920" height="1080" decoding="async"></div>
-                    <div class="slide"><img src="assets/images/forte-sobre-12.webp" alt="Unidade da Forte Restauradora em São Marcos – imagem 12" loading="lazy" width="1920" height="1080" decoding="async"></div>
-                    <div class="slide"><img src="assets/images/forte-sobre-13.webp" alt="Unidade da Forte Restauradora em São Marcos – imagem 13" loading="lazy" width="1920" height="1080" decoding="async"></div>
+                    <div class="slide active"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="assets/images/forte-sobre-01.webp" alt="Unidade da Forte Restauradora em São Marcos – imagem 1" loading="lazy" width="1920" height="1080" decoding="async"></div>
+                    <div class="slide"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="assets/images/forte-sobre-02.webp" alt="Unidade da Forte Restauradora em São Marcos – imagem 2" loading="lazy" width="1920" height="1080" decoding="async"></div>
+                    <div class="slide"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="assets/images/forte-sobre-03.webp" alt="Unidade da Forte Restauradora em São Marcos – imagem 3" loading="lazy" width="1920" height="1080" decoding="async"></div>
+                    <div class="slide"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="assets/images/forte-sobre-04.webp" alt="Unidade da Forte Restauradora em São Marcos – imagem 4" loading="lazy" width="1920" height="1080" decoding="async"></div>
+                    <div class="slide"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="assets/images/forte-sobre-05.webp" alt="Unidade da Forte Restauradora em São Marcos – imagem 5" loading="lazy" width="1920" height="1080" decoding="async"></div>
+                    <div class="slide"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="assets/images/forte-sobre-06.webp" alt="Unidade da Forte Restauradora em São Marcos – imagem 6" loading="lazy" width="1920" height="1080" decoding="async"></div>
+                    <div class="slide"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="assets/images/forte-sobre-07.webp" alt="Unidade da Forte Restauradora em São Marcos – imagem 7" loading="lazy" width="1920" height="1080" decoding="async"></div>
+                    <div class="slide"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="assets/images/forte-sobre-08.webp" alt="Unidade da Forte Restauradora em São Marcos – imagem 8" loading="lazy" width="1920" height="1080" decoding="async"></div>
+                    <div class="slide"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="assets/images/forte-sobre-09.webp" alt="Unidade da Forte Restauradora em São Marcos – imagem 9" loading="lazy" width="1920" height="1080" decoding="async"></div>
+                    <div class="slide"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="assets/images/forte-sobre-10.webp" alt="Unidade da Forte Restauradora em São Marcos – imagem 10" loading="lazy" width="1920" height="1080" decoding="async"></div>
+                    <div class="slide"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="assets/images/forte-sobre-11.webp" alt="Unidade da Forte Restauradora em São Marcos – imagem 11" loading="lazy" width="1920" height="1080" decoding="async"></div>
+                    <div class="slide"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="assets/images/forte-sobre-12.webp" alt="Unidade da Forte Restauradora em São Marcos – imagem 12" loading="lazy" width="1920" height="1080" decoding="async"></div>
+                    <div class="slide"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="assets/images/forte-sobre-13.webp" alt="Unidade da Forte Restauradora em São Marcos – imagem 13" loading="lazy" width="1920" height="1080" decoding="async"></div>
                     
                     <button class="slide-arrow slide-arrow-prev" type="button" onclick="changeSlide(-1)" aria-label="Imagem anterior">
                         <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
@@ -2149,7 +2150,7 @@
             </div>
 
             <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3491.657964029455!2d-51.09223869999999!3d-28.938203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951e923e9c882061%3A0xbf9d4903cbce19d5!2sForte%20Restauradora%20De%20Caminh%C3%B5es!5e0!3m2!1spt-BR!2sbr!4v1781718133913!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3491.657964029455!2d-51.09223869999999!3d-28.938203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951e923e9c882061%3A0xbf9d4903cbce19d5!2sForte%20Restauradora%20De%20Caminh%C3%B5es!5e0!3m2!1spt-BR!2sbr!4v1781718133913!5m2!1spt-BR!2sbr" title="Localização da Forte Restauradora no Google Maps" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
             <div class="contact-info">
@@ -2277,6 +2278,28 @@
                 images.forEach(img => imageObserver.observe(img));
             });
         }
+
+        // Load below-the-fold media only when it is close to entering the viewport.
+        const deferredMediaObserver = 'IntersectionObserver' in window ? new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                const target = entry.target;
+                if (target.dataset.src) {
+                    target.src = target.dataset.src;
+                    target.removeAttribute('data-src');
+                }
+                if (target.dataset.backgroundImage) {
+                    target.style.backgroundImage = `url("${target.dataset.backgroundImage}")`;
+                    target.removeAttribute('data-background-image');
+                }
+                observer.unobserve(target);
+            });
+        }, { rootMargin: '300px 0px' }) : null;
+
+        document.querySelectorAll('img[data-src], .hero-background-slide[data-background-image], iframe[data-src]').forEach((media) => {
+            if (deferredMediaObserver) deferredMediaObserver.observe(media);
+            else if (media.dataset.src) media.src = media.dataset.src;
+        });
 
         // Menu toggle
         const menuToggle = document.getElementById('menu-toggle');
@@ -2423,16 +2446,22 @@
             showSlide(slideIndex += step);
         }
 
+        function loadSlideImage(slide) {
+            const image = slide ? slide.querySelector('img[data-src]') : null;
+            if (image) {
+                image.src = image.dataset.src;
+                image.removeAttribute('data-src');
+            }
+        }
         function showSlide(n) {
             const slides = document.querySelectorAll('.slide');
             const indicators = document.querySelectorAll('.indicator');
-            
             if (n >= slides.length) slideIndex = 0;
             if (n < 0) slideIndex = slides.length - 1;
-            
+            loadSlideImage(slides[slideIndex]);
+            loadSlideImage(slides[(slideIndex + 1) % slides.length]);
             slides.forEach(slide => slide.classList.remove('active'));
             indicators.forEach(ind => ind.classList.remove('active'));
-            
             slides[slideIndex].classList.add('active');
             indicators[slideIndex].classList.add('active');
         }
@@ -2467,7 +2496,12 @@
             setInterval(() => {
                 heroBackgroundSlides[heroBackgroundIndex].classList.remove('active');
                 heroBackgroundIndex = (heroBackgroundIndex + 1) % heroBackgroundSlides.length;
-                heroBackgroundSlides[heroBackgroundIndex].classList.add('active');
+                const nextHeroSlide = heroBackgroundSlides[heroBackgroundIndex];
+                if (nextHeroSlide.dataset.backgroundImage) {
+                    nextHeroSlide.style.backgroundImage = `url("${nextHeroSlide.dataset.backgroundImage}")`;
+                    nextHeroSlide.removeAttribute('data-background-image');
+                }
+                nextHeroSlide.classList.add('active');
             }, 6000);
         }
 
